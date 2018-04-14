@@ -46,7 +46,7 @@ app.post('/callback', (req, res) => {
 			})
 			.catch((err) => {
 				// error handling
-				console.log('error')
+				console.log(err.message)
 			});
 	}
 	res.sendStatus(200)
