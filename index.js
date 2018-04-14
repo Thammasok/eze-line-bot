@@ -45,7 +45,7 @@ function sendText (sender, text) {
     ]
 	};
 	
-	client.pushMessage(data)
+	return client.pushMessage(data)
 		.then(() => {
 			console.log('success')
 		})
