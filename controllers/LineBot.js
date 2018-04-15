@@ -16,7 +16,7 @@ exports.callLineBot = function(req, res, next) {
 	if (text === 'llenn') {
 		const message = {
 			type: 'text',
-			text: 'สวัสดีค่ะ เราเป็นผู้ช่วยของคุณ : ${sender}'
+			text: 'สวัสดีค่ะ เราเป็นผู้ช่วยของคุณ : ' + sender
 		};
 
 		client.pushMessage(sender, message)
