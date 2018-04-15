@@ -5,9 +5,9 @@ const client = new line.Client({
 });
 
 exports.callLineBot = function(req, res, next) {
-	var text = req.body.events[0].message.text;
-	var sender = req.body.events[0].source.userId;
-	var replyToken = req.body.events[0].replyToken;
+	const text = req.body.events[0].message.text;
+	const sender = req.body.events[0].source.userId;
+	const replyToken = req.body.events[0].replyToken;
 	
 	// console.log(text, sender, replyToken)
 	// console.log(typeof sender, typeof text)
@@ -16,7 +16,7 @@ exports.callLineBot = function(req, res, next) {
 	if (text === 'llenn') {
 		const message = {
 			type: 'text',
-			text: 'สวัสดีค่ะ เราเป็นผู้ช่วยของคุณ'
+			text: 'สวัสดีค่ะ เราเป็นผู้ช่วยของคุณ : ${sender}'
 		};
 
 		client.pushMessage(sender, message)
