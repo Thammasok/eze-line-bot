@@ -23,23 +23,28 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(text, sender, replyToken)
 	// console.log(typeof sender, typeof text)
 	// console.log(req.body.events[0])
-
-	switch (text.toLowerCase()) {
-		case 'llenn':
-			await weakUpBot(sender);
-			break;
-		case 'menu': 
-			await showMenu(sender, 'section');
-			break;
-		case 'help':
-			// await helpSender(sender);
-			await help(sender);
-			break;
-		case 'help me':
-			await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
-			break;
-		default:
-			await sendMessage(sender, 'นี่กำลังถามไม่ตรงคำตอบนะ');
+	const textLength = text.length;
+	
+	if(textLength > 1) {
+		switch (text.toLowerCase()) {
+			case 'llenn':
+				await weakUpBot(sender);
+				break;
+			case 'menu': 
+				await showMenu(sender, 'section');
+				break;
+			case 'help':
+				// await helpSender(sender);
+				await help(sender);
+				break;
+			case 'help me':
+				await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
+				break;
+			default:
+				await sendMessage(sender, 'นี่กำลังถามไม่ตรงคำตอบนะ');
+		}
+	} else {
+		await weakUpBot(sender);
 	}
 
 	res.sendStatus(200);

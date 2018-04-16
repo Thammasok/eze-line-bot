@@ -17,15 +17,10 @@ exports.showMenu = function (sender, section) {
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "ChomCHOB",
 					"text": "นัดประชุม, ลางาน, เตือนวันหยุด, ชวนเพื่อนไต่แรงค์",
-					"defaultAction": {
-						"type": "message",
-						"label": "จิ้มเบาๆ เราก็ไป",
-						"text": "cc menu"
-					},
 					"actions": [
 						{
 							"type": "message",
-							"label": "จิ้มเบาๆ เราก็ไป",
+							"label": "ChomCHOB",
 							"text": "cc menu"
 						}
 					]
@@ -38,7 +33,7 @@ exports.showMenu = function (sender, section) {
 					"actions": [
 						{
 							"type": "message",
-							"label": "เห็นงานเป็นลม เห็น...",
+							"label": "Trello",
 							"text": "trello menu"
 						}
 					]
@@ -51,7 +46,7 @@ exports.showMenu = function (sender, section) {
 					"actions": [
 						{
 							"type": "message",
-							"label": "นัดไว้ละ",
+							"label": "Calendar",
 							"text": "calendar menu"
 						}
 					]
@@ -59,12 +54,12 @@ exports.showMenu = function (sender, section) {
 				{
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": "Setting",
+					"title": "Settings",
 					"text": "Optimize your bot",
 					"actions": [
 						{
 							"type": "message",
-							"label": "ตั้งค่า",
+							"label": "Settings",
 							"text": "setting menu"
 						}
 					]
