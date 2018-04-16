@@ -45,7 +45,7 @@ exports.updateLeaveDate = function (sender, text) {
   const leaveDateText = text.substring(4).split("to");
   let leaveFrom = "";
   let leaveTo = "";
-  let message = "";
+  let msg = "";
 
   if (leaveDateText === undefined) {
     leaveFrom = text.substring(4);
@@ -54,17 +54,17 @@ exports.updateLeaveDate = function (sender, text) {
     leaveTo = leaveDateText[1];
 
     if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
-      message = "Format ของ from ไม่ถูกต้อง"
+      msg = "Format ของ from ไม่ถูกต้อง"
     }
 
     if(moment(leaveTo, "DD-MM-YYYY", true).isValid() || moment(leaveTo, "DD-MM-YYYY hh:mm", true).isValid()) {
-      message = "Format ของ to ไม่ถูกต้อง"
+      msg = "Format ของ to ไม่ถูกต้อง"
     }
   } else {
     leaveFrom = leaveDateText[0];
     
     if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
-      message = "Format ของ from ไม่ถูกต้อง"
+      msg = "Format ของ from ไม่ถูกต้อง"
     }
   }
 
@@ -72,7 +72,7 @@ exports.updateLeaveDate = function (sender, text) {
 
   const message = {
     type: 'text',
-    text: message
+    text: msg
   };
 
   client.pushMessage(sender, message)
