@@ -42,33 +42,31 @@ exports.leave = function (sender, leaveType) {
 };
 
 exports.updateLeaveDate = function (sender, text) {
-  const leaveDateText = text.substring(4).split("to");
-  let leaveFrom = "";
-  let leaveTo = "";
-  let msg = "";
+  // const leaveDateText = text.substring(4).split("to");
+  // let leaveFrom = "";
+  // let leaveTo = "";
+  let msg = "undefined";
 
-  if (leaveDateText === undefined) {
-    leaveFrom = text.substring(4);
-  } else if (leaveDateText !== undefined && leaveDateText[1] !== undefined) {
-    leaveFrom = leaveDateText[0];
-    leaveTo = leaveDateText[1];
+  // if (leaveDateText === undefined) {
+  //   leaveFrom = text.substring(4);
+  // } else if (leaveDateText !== undefined && leaveDateText[1] !== undefined) {
+  //   leaveFrom = leaveDateText[0];
+  //   leaveTo = leaveDateText[1];
 
-    if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
-      msg = "Format ของ from ไม่ถูกต้อง"
-    }
+  //   if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
+  //     msg = "Format ของ from ไม่ถูกต้อง"
+  //   }
 
-    if(moment(leaveTo, "DD-MM-YYYY", true).isValid() || moment(leaveTo, "DD-MM-YYYY hh:mm", true).isValid()) {
-      msg = "Format ของ to ไม่ถูกต้อง"
-    }
-  } else {
-    leaveFrom = leaveDateText[0];
+  //   if(moment(leaveTo, "DD-MM-YYYY", true).isValid() || moment(leaveTo, "DD-MM-YYYY hh:mm", true).isValid()) {
+  //     msg = "Format ของ to ไม่ถูกต้อง"
+  //   }
+  // } else {
+  //   leaveFrom = leaveDateText[0];
     
-    if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
-      msg = "Format ของ from ไม่ถูกต้อง"
-    }
-  }
-
-  
+  //   if(moment(leaveFrom, "DD-MM-YYYY", true).isValid() || moment(leaveFrom, "DD-MM-YYYY hh:mm", true).isValid()) {
+  //     msg = "Format ของ from ไม่ถูกต้อง"
+  //   }
+  // }
 
   const message = {
     type: 'text',
