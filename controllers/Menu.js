@@ -4,7 +4,7 @@ const client = new line.Client({
 	channelAccessToken: '5YyI0WllyPvKou0xttX8W0qacW3C0i96J/+97kxA6Xhxjpu7i/QDeanvfUYZfujOtsbGwuJWSf5TIe4YXnAKJTSRkzxmj9RWAxMLhF9TT89Qg0nPgqFu9eIPEZ33F5iU0+Cu2gWWO4j7ZzzwnAzfvAdB04t89/1O/w1cDnyilFU='
 });
 
-exports.showMenu = function (section) {
+exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",

@@ -29,7 +29,7 @@ exports.callLineBot = async function(req, res, next) {
 			await weakUpBot(sender);
 			break;
 		case 'menu': 
-			await showMenu('main');
+			await showMenu(sender, 'section');
 			break;
 		case 'help':
 			// await helpSender(sender);
