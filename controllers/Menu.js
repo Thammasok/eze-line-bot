@@ -107,8 +107,8 @@ exports.companyMenu = function (sender) {
 					"imageAspectRatio": "rectangle",
 					"imageSize": "cover",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": "Menu",
-					"text": "",
+					"title": team + "Menu",
+					"text": "Please select",
 					"actions": [
 						{
 							"type": "message",
