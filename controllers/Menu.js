@@ -97,7 +97,7 @@ exports.mainMenu = function (sender) {
 
 exports.companyMenu = function (sender) {
 	return new Promise(() => {
-		const team = "chomchob";
+		const team = "ChomCHOB";
 		const message = {
 			"type": "template",
 			"altText": team + " menu",
@@ -107,13 +107,65 @@ exports.companyMenu = function (sender) {
 					"imageAspectRatio": "rectangle",
 					"imageSize": "cover",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": team + "Menu",
+					"title": team + " Menu",
 					"text": "Please select",
 					"actions": [
 						{
 							"type": "message",
 							"label": "ลางาน",
-							"text": team + " leave"
+							"text": "menu:leave"
+						}
+					]
+			}
+		};
+	
+		client.pushMessage(sender, message)
+			.then(() => {
+				console.log('success');
+			})
+			.catch((err) => {
+				// error handling
+				console.log(err);
+			});
+	});
+}
+
+exports.leaveMenu = function (sender) {
+	return new Promise(() => {
+		const team = "ChomCHOB";
+		const message = {
+			"type": "template",
+			"altText": "Leave menu",
+			"template": {
+					"type": "buttons",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Leave menu",
+					"text": "ต้องการลา?",
+					"actions": [
+						{
+							"type": "message",
+							"label": "ลาป่วย",
+							"text": "leave:sick"
+						},
+						{
+							"type": "message",
+							"label": "ลากิจ",
+							"text": "leave:personal business"
+						},
+						{
+							"type": "message",
+							"label": "ลาพักร้อน",
+							"text": "leave:annual"
+						},
+						{
+							"type": "message",
+							"label": "ลาคลอด",
+							"text": "leave:maternity"
+						},
+						{
+							"type": "message",
+							"label": "ลาบวช",
+							"text": "leave:ordination"
 						}
 					]
 			}

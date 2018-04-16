@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
-const { mainMenu, companyMenu } = require('./Menu');
+const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
 
 const config = require('../config/config');
 
@@ -37,6 +37,9 @@ exports.callLineBot = async function(req, res, next) {
 				break;
 			case 'menu:company':
 				await companyMenu(sender);
+			case 'menu:leave':
+				await leaveMenu(sender, text);
+				break;
 			case 'help':
 				await help(sender);
 				break;
