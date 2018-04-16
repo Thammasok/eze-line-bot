@@ -179,7 +179,7 @@ exports.leaveMenu = function (sender) {
 			})
 			.catch((err) => {
 				// error handling
-				console.log(err.response.data);
+				console.log(err.message);
 			});
 	});
 }
