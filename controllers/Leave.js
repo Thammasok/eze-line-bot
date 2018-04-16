@@ -23,20 +23,42 @@ exports.leave = function (sender, leaveType) {
     //  }
 
     const message = {
-      "type": "template",
-      "altText": "Leave date",
-      "template": {
-        "type": "confirm",
-        "text": "ต้องการลาในวันที่",
-        "actions": [
-          {
-            "type": "message",
-            "label": "ระบุวันลา",
-            "text": "leave:from"
-          }
-        ]
-      }
+			"type": "template",
+			"altText":"Leave date",
+			"template": {
+				"type": "buttons",
+				"title": "Leave date",
+				"text": "ต้องการลาในวันที่?",
+				"actions": [
+					{
+						"type": "message",
+						"label": "ระบุวันที่ต้องการลา ตาม Format นี้ 20-02-2018 10:00:00 หรือ 20-02-2018 (ถ้าต้องการลาเต็มวัน) และใช้ to เพื่อระบุ ถึงวันที่",
+						"text": "leave:date"
+					}
+				]
+			}
     };
+    
+    // const message = {
+    //   "type": "template",
+    //   "altText": "",
+    //   "template": {
+    //     "type": "confirm",
+    //     "text": "",
+    //     "actions": [
+    //       {
+    //         "type": "message",
+    //         "label": "วันที่เริ่มลา",
+    //         "text": "from"
+    //       },
+    //       {
+    //         "type": "message",
+    //         "label": "ถึงวันที่",
+    //         "text": "leave:to"
+    //       }
+    //     ]
+    //   }
+    // };
 	
 		client.pushMessage(sender, message)
 			.then(() => {
@@ -60,7 +82,7 @@ exports.leaveDateSelect = function (sender, type) {
 
   const message = {
     type: 'text',
-    text: 'พิมพ์' + leaveDateText + ' ตาม Format นี้ "20-02-2018" หรือ 20-02-2018 10:00:00'
+    text: 'พิมพ์' + leaveDateText + ' '
   };
 
   client.pushMessage(sender, message)
