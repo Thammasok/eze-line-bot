@@ -38,7 +38,7 @@ exports.callLineBot = async function(req, res, next) {
 			case 'menu:company':
 				await companyMenu(sender);
 			case 'menu:leave':
-				await leaveMenu(sender, text);
+				await leaveMenu(sender);
 				break;
 			case 'help':
 				await help(sender);

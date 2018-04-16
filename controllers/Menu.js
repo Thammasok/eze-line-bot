@@ -132,45 +132,44 @@ exports.companyMenu = function (sender) {
 
 exports.leaveMenu = function (sender) {
 	return new Promise(() => {
-		const team = "ChomCHOB";
 		const message = {
 			"type": "template",
-			"altText": "Leave menu",
+			"altText":"Leave menu",
 			"template": {
-					"type": "buttons",
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
-					"imageAspectRatio": "rectangle",
-					"imageSize": "cover",
-					"imageBackgroundColor": "#FFFFFF",
-					"title": "Leave menu",
-					"text": "ต้องการลา?",
-					"actions": [
-						{
-							"type": "message",
-							"label": "ลาป่วย",
-							"text": "leave:sick"
-						},
-						{
-							"type": "message",
-							"label": "ลากิจ",
-							"text": "leave:personal business"
-						},
-						{
-							"type": "message",
-							"label": "ลาพักร้อน",
-							"text": "leave:annual"
-						},
-						{
-							"type": "message",
-							"label": "ลาคลอด",
-							"text": "leave:maternity"
-						},
-						{
-							"type": "message",
-							"label": "ลาบวช",
-							"text": "leave:ordination"
-						}
-					]
+				"type": "buttons",
+				"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+				"imageAspectRatio": "rectangle",
+				"imageSize": "cover",
+				"imageBackgroundColor": "#FFFFFF",
+				"title": "Leave menu",
+				"text": "ต้องการลา?",
+				"actions": [
+					{
+						"type": "message",
+						"label": "ลาป่วย",
+						"text": "leave:sick"
+					},
+					{
+						"type": "message",
+						"label": "ลากิจ",
+						"text": "leave:personal business"
+					},
+					{
+						"type": "message",
+						"label": "ลาพักร้อน",
+						"text": "leave:annual"
+					},
+					{
+						"type": "message",
+						"label": "ลาคลอด",
+						"text": "leave:maternity"
+					},
+					{
+						"type": "message",
+						"label": "ลาบวช",
+						"text": "leave:ordination"
+					}
+				]
 			}
 		};
 	
@@ -180,7 +179,7 @@ exports.leaveMenu = function (sender) {
 			})
 			.catch((err) => {
 				// error handling
-				console.log(err);
+				console.log(err.response.data);
 			});
 	});
 }
