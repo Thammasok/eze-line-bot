@@ -22,7 +22,7 @@ exports.mainMenu = function (sender) {
 						{
 							"type": "message",
 							"label": "ChomCHOB",
-							"text": "cc menu"
+							"text": "menu:company"
 						}
 					]
 				},
@@ -95,12 +95,12 @@ exports.mainMenu = function (sender) {
 	});
 }
 
-exports.menuTeam = function (sender, msg) {
+exports.companyMenu = function (sender) {
 	return new Promise(() => {
-		const section = msg.split(":");
+		const team = "chomchob";
 		const message = {
 			"type": "template",
-			"altText": section[1] + " menu",
+			"altText": team + " menu",
 			"template": {
 					"type": "buttons",
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
@@ -113,7 +113,7 @@ exports.menuTeam = function (sender, msg) {
 						{
 							"type": "message",
 							"label": "ลางาน",
-							"text": section + " leave"
+							"text": team + " leave"
 						}
 					]
 			}
