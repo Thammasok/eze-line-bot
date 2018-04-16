@@ -15,17 +15,17 @@ exports.showMenu = function (sender, section) {
 				{
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": "this is menu",
-					"text": "description",
+					"title": "ChomCHOB",
+					"text": "นัดประชุม, ลางาน, เตือนวันหยุด, ชวนเพื่อนไต่แรงค์",
 					"defaultAction": {
-						"type": "uri",
-						"label": "View detail",
-						"uri": "http://example.com/page/123"
+						"type": "message",
+						"label": "จิ้มเบาๆ เราก็ไป",
+						"text": "cc menu"
 					},
 					"actions": [
 						{
 							"type": "message",
-							"label": "จิ้มเบาๆ",
+							"label": "จิ้มเบาๆ เราก็ไป",
 							"text": "cc menu"
 						}
 					]
