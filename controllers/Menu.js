@@ -4,7 +4,53 @@ const client = new line.Client({
 	channelAccessToken: '5YyI0WllyPvKou0xttX8W0qacW3C0i96J/+97kxA6Xhxjpu7i/QDeanvfUYZfujOtsbGwuJWSf5TIe4YXnAKJTSRkzxmj9RWAxMLhF9TT89Qg0nPgqFu9eIPEZ33F5iU0+Cu2gWWO4j7ZzzwnAzfvAdB04t89/1O/w1cDnyilFU='
 });
 
-exports.showMenu = function (sender, section) {
+exports.mainMenu = function (sender) {
+	return new Promise(() => {
+	const message = {
+		"type": "imagemap",
+		"baseUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
+		"altText": "Main menu",
+		"baseSize": {
+			"height": 1040,
+			"width": 1040
+		},
+		"actions": [
+			{
+				"type": "message",
+				"label": "ChomCHOB",
+				"text": "cc menu",
+				"area": {
+					"x": 0,
+					"y": 0,
+					"width": 520,
+					"height": 1040
+				}
+			},
+			{
+				"type": "message",
+				"text": "Hello",
+				"area": {
+					"x": 520,
+					"y": 0,
+					"width": 520,
+					"height": 1040
+				}
+			}
+		]
+	};
+
+	client.pushMessage(sender, message)
+		.then(() => {
+			console.log('success');
+		})
+		.catch((err) => {
+			// error handling
+			console.log(err);
+		});
+	});
+}
+
+exports.showMenu = function (sender) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
@@ -72,8 +118,8 @@ exports.showMenu = function (sender, section) {
 					"actions": [
 						{
 							"type": "message",
-							"label": "Settings",
-							"text": "setting menu"
+							"label": "Trello",
+							"text": "trello menu"
 						}
 					]
 				}
