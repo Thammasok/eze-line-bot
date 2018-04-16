@@ -29,6 +29,54 @@ exports.showMenu = function (sender, section) {
 							"text": "cc menu"
 						}
 					]
+				},
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Trello",
+					"text": "Managing your tasks",
+					"defaultAction": {
+						"type": "message",
+						"label": "เห็นงานเป็นลม",
+						"text": "trello menu"
+					},
+					"actions": [
+						{
+							"type": "message",
+							"label": "เห็นงานเป็นลม เห็น...",
+							"text": "trello menu"
+						}
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Calendar",
+					"text": "Plan your upcomming events",
+					"defaultAction": {
+						"type": "message",
+						"label": "นัดไว้ละ",
+						"text": "calendar menu"
+					},
+					"actions": [
+						{
+							"type": "message",
+							"label": "นัดไว้ละ",
+							"text": "calendar menu"
+						}
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Setting",
+					"text": "Optimize your bot",
+					"defaultAction": {
+						"type": "message",
+						"label": "ตั้งค่า",
+						"text": "setting menu"
+					},
+					"actions": []
 				}
 			],
 			"imageAspectRatio": "rectangle",
