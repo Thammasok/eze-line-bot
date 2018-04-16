@@ -12,7 +12,7 @@ exports.leave = function (sender, leaveType) {
      * Field: id, userId(Sender), leave_type, status, [leave_from, leave_to], created_at, updated_at 
      */
 
-     let leave_type = 2;
+    //  let leave_type = 2;
     //  if(leaveType === 'sick') {
     //    leave_type = 1;
     //  } else if (leaveType === 'annual') {
@@ -22,42 +22,28 @@ exports.leave = function (sender, leaveType) {
     //   leave_type = 2;
     //  }
 
+    //Create on DB
+
     const message = {
-			"type": "template",
-			"altText":"Leave date",
-			"template": {
-				"type": "buttons",
-				"title": "Leave date",
-				"text": "ต้องการลาในวันที่?",
-				"actions": [
-					{
-						"type": "message",
-						"label": "ระบุวันที่ต้องการลา ตาม Format นี้ 20-02-2018 10:00:00 หรือ 20-02-2018 (ถ้าต้องการลาเต็มวัน) และใช้ to เพื่อระบุ ถึงวันที่",
-						"text": "leave:date"
-					}
-				]
-			}
+      "type": "text",
+      "text": "ระบุวันที่ต้องการลา ตาม Format นี้ 20-02-2018 10:00:00 หรือ 20-02-2018 (ถ้าต้องการลาเต็มวัน) และใช้ to เพื่อระบุ ถึงวันที่"
     };
-    
-    // const message = {
-    //   "type": "template",
-    //   "altText": "",
-    //   "template": {
-    //     "type": "confirm",
-    //     "text": "",
-    //     "actions": [
-    //       {
-    //         "type": "message",
-    //         "label": "วันที่เริ่มลา",
-    //         "text": "from"
-    //       },
-    //       {
-    //         "type": "message",
-    //         "label": "ถึงวันที่",
-    //         "text": "leave:to"
-    //       }
-    //     ]
-    //   }
+
+    // {
+		// 	"type": "template",
+		// 	"altText":"Leave date",
+		// 	"template": {
+		// 		"type": "buttons",
+		// 		"title": "Leave date",
+		// 		"text": "ต้องการลาในวันที่?",
+		// 		"actions": [
+		// 			{
+		// 				"type": "message",
+		// 				"label": "ระบุวันที่ต้องการลา ตาม Format นี้ 20-02-2018 10:00:00 หรือ 20-02-2018 (ถ้าต้องการลาเต็มวัน) และใช้ to เพื่อระบุ ถึงวันที่",
+		// 				"text": "leave:date"
+		// 			}
+		// 		]
+		// 	}
     // };
 	
 		client.pushMessage(sender, message)
