@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
-const { mainMenu, showMenu } = require('./Menu');
+const { mainMenu } = require('./Menu');
 
 const client = new line.Client({
 	channelAccessToken: '5YyI0WllyPvKou0xttX8W0qacW3C0i96J/+97kxA6Xhxjpu7i/QDeanvfUYZfujOtsbGwuJWSf5TIe4YXnAKJTSRkzxmj9RWAxMLhF9TT89Qg0nPgqFu9eIPEZ33F5iU0+Cu2gWWO4j7ZzzwnAzfvAdB04t89/1O/w1cDnyilFU='
@@ -30,11 +30,8 @@ exports.callLineBot = async function(req, res, next) {
 			case 'llenn':
 				await weakUpBot(sender);
 				break;
-			case 'mm': 
-				await mainMenu(sender, 'section');
-				break;
 			case 'menu': 
-				await showMenu(sender, 'section');
+				await mainMenu(sender);
 				break;
 			case 'help':
 				// await helpSender(sender);

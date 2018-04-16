@@ -7,52 +7,6 @@ const client = new line.Client({
 exports.mainMenu = function (sender) {
 	return new Promise(() => {
 	const message = {
-		"type": "imagemap",
-		"baseUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
-		"altText": "Main menu",
-		"baseSize": {
-			"height": 1040,
-			"width": 1040
-		},
-		"actions": [
-			{
-				"type": "message",
-				"label": "ChomCHOB",
-				"text": "cc menu",
-				"area": {
-					"x": 0,
-					"y": 0,
-					"width": 520,
-					"height": 1040
-				}
-			},
-			{
-				"type": "message",
-				"text": "Hello",
-				"area": {
-					"x": 520,
-					"y": 0,
-					"width": 520,
-					"height": 1040
-				}
-			}
-		]
-	};
-
-	client.pushMessage(sender, message)
-		.then(() => {
-			console.log('success');
-		})
-		.catch((err) => {
-			// error handling
-			console.log(err);
-		});
-	});
-}
-
-exports.showMenu = function (sender) {
-	return new Promise(() => {
-	const message = {
 		"type": "template",
 		"altText": "carousel main menu",
 		"template": {
