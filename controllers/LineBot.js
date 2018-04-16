@@ -22,7 +22,7 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(typeof sender, typeof text)
 	// console.log(req.body.events[0])
 
-	switch (text) {
+	switch (text.toLowerCase()) {
 		case 'llenn':
 			await weakUpBot(sender);
 			break;
@@ -30,10 +30,12 @@ exports.callLineBot = async function(req, res, next) {
 			// await helpSender(sender);
 			await sendMessage(sender, 'ตอนนี้ยังช่วยอะไรไม่ได้เลยจ้าาาาาาา');
 			break;
+		case 'help me':
+			await sendMessage(sender, 'ฉันจะช่วยคุฯให้เต็มที่');
+			break;
 		default:
-			await sendMessage(sender, 'ไม่มีคำตอบให้จ๊ะ Sorry!!!!');
+			await sendMessage(sender, 'นี่กำลังถามไม่ตรงคำตอบนะ');
 	}
-
 
 	res.sendStatus(200);
 }
@@ -53,7 +55,7 @@ function weakUpBot(sender) {
 				// error handling
 				console.log(err);
 			});
-	})
+	});
 }
 
 function sendMessage(sender, text) {
@@ -71,5 +73,39 @@ function sendMessage(sender, text) {
 				// error handling
 				console.log(err);
 			});
-	})
+	});
+}
+
+function helpSender(sender){
+	return new Promise(() => {
+		const message = {
+			"type": "template",
+			"altText": "this is a confirm template",
+			"template": {
+					"type": "confirm",
+					"text": "อยากได้ความช่วยเหรอจากเราเหรอ?",
+					"actions": [
+							{
+								"type": "message",
+								"label": "Yes",
+								"text": "help me"
+							},
+							{
+								"type": "message",
+								"label": "No",
+								"text": "no help"
+							}
+					]
+			}
+		};
+	
+		client.pushMessage(sender, message)
+			.then(() => {
+				console.log('success');
+			})
+			.catch((err) => {
+				// error handling
+				console.log(err);
+			});
+	});
 }
