@@ -41,11 +41,22 @@ exports.leave = function (sender, leaveType) {
 };
 
 exports.updateLeaveDate = function (sender, text) {
-  const leaveDateText = text.substring(4).trim().split(" ");
+  const leaveDateText = text.substring(4).split("to");
+  let leaveFrom = "";
+  let leaveTo = "";
+
+  if (leaveDateText === undefined) {
+    leaveFrom = text.substring(4);
+  } else if (leaveDateText !== undefined && leaveDateText[1] !== undefined) {
+    leaveFrom = leaveDateText[0];
+    leaveTo = leaveDateText[1];
+  } else {
+    leaveFrom = leaveDateText[0];
+  }
 
   const message = {
     type: 'text',
-    text: leaveDateText[0]
+    text: leaveFrom + ' ff ' + leaveTo
   };
 
   client.pushMessage(sender, message)
