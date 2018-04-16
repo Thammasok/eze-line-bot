@@ -43,12 +43,6 @@ exports.leave = function (sender, leaveType) {
 exports.updateLeaveDate = function (sender, text) {
   const leaveDateText = text.substring(4).trim().split(" ");
 
-  if(type === "from") {
-    leaveDateText = "วันที่เริ่มลา";
-  } else {
-    leaveDateText = "ถึงวันที่";
-  }
-
   const message = {
     type: 'text',
     text: leaveDateText[0]
