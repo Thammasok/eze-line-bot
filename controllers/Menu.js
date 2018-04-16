@@ -8,37 +8,79 @@ exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "This is a buttons template",
+		"altText": "this is a carousel template",
 		"template": {
-			"type": "buttons",
-			"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
-			"imageAspectRatio": "rectangle",
-			"imageSize": "cover",
-			"imageBackgroundColor": "#FFFFFF",
-			"title": "Menu",
-			"text": "Please select",
-			"defaultAction": {
-				"type": "uri",
-				"label": "View detail",
-				"uri": "http://example.com/page/123"
-			},
-			"actions": [
-				{
-					"type": "postback",
-					"label": "Buy",
-					"data": "action=buy&itemid=123"
-				},
-				{
-					"type": "postback",
-					"label": "Add to cart",
-					"data": "action=add&itemid=123"
-				},
-				{
-					"type": "uri",
-					"label": "View detail",
-					"uri": "http://example.com/page/123"
-				}
-			]
+				"type": "carousel",
+				"columns": [
+						{
+							"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
+							"imageBackgroundColor": "#FFFFFF",
+							"title": "ChomCHOB",
+							"text": "Support อะไรบ้าง ถ้าคิดออกจะบอกอีกที :P",
+							"defaultAction": {
+								"type": "message",
+								"label": "ChomCHOB Menu",
+								"text": "ccmenu"
+							},
+							"actions": [
+								{
+									"type": "message",
+									"label": "ชวนเพื่อนลงแรงค์",
+									"text": "ranggame"
+								},
+								{
+									"type": "message",
+									"label": "ลางาน ก็บอกด้วย",
+									"text": "la stop"
+								},
+								{
+									"type": "message",
+									"label": "ต้ังแต่มีแฟนเพื่อนเราก็เปลี่ยนไป",
+									"text": "father home association"
+								},
+								{
+									"type": "message",
+									"label": "วันไหนหยุดเตือนกูด้วย",
+									"text": "stop working"
+								}
+							]
+						},
+						{
+							"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+							"imageBackgroundColor": "#000000",
+							"title": "Trello",
+							"text": "description",
+							"defaultAction": {
+								"type": "message",
+								"label": "Todo",
+								"text": "todo"
+							},
+							"actions": [
+								{
+									"type": "message",
+									"label": "Create Cards",
+									"text": "new task"
+								},
+								{
+									"type": "message",
+									"label": "Waiting",
+									"text": "wating task"
+								},
+								{
+									"type": "message",
+									"label": "Processing",
+									"text": "processing Task"
+								},
+								{
+									"type": "message",
+									"label": "Move",
+									"text": "move task"
+								}
+							]
+						}
+				],
+				"imageAspectRatio": "rectangle",
+				"imageSize": "cover"
 		}
 	};
 
