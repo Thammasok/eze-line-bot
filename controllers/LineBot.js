@@ -2,8 +2,10 @@ const line = require('@line/bot-sdk');
 const { help } = require('./Help');
 const { mainMenu } = require('./Menu');
 
+const config = require('../config/config');
+
 const client = new line.Client({
-	channelAccessToken: '5YyI0WllyPvKou0xttX8W0qacW3C0i96J/+97kxA6Xhxjpu7i/QDeanvfUYZfujOtsbGwuJWSf5TIe4YXnAKJTSRkzxmj9RWAxMLhF9TT89Qg0nPgqFu9eIPEZ33F5iU0+Cu2gWWO4j7ZzzwnAzfvAdB04t89/1O/w1cDnyilFU='
+	channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
 });
 
 exports.callLineBot = async function(req, res, next) {
