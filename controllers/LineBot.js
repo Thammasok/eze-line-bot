@@ -32,6 +32,8 @@ exports.callLineBot = async function(req, res, next) {
 			case 'llenn':
 				await weakUpBot(sender);
 				break;
+			
+			//Menu
 			case 'menu': 
 				await mainMenu(sender);
 				break;
@@ -40,6 +42,19 @@ exports.callLineBot = async function(req, res, next) {
 			case 'menu:leave':
 				await leaveMenu(sender);
 				break;
+
+			//Leave
+			case 'leave:sick':
+				await leave(sender, "sick");
+				break;
+			case 'leave:personal business':
+				await leave(sender, "personal business");
+				break;
+			case 'leave:annual':
+				await leave(sender, "annual");
+				break;
+
+			//Help
 			case 'help':
 				await help(sender);
 				break;

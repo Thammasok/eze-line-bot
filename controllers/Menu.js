@@ -138,7 +138,7 @@ exports.leaveMenu = function (sender) {
 			"template": {
 				"type": "buttons",
 				"title": "Leave menu",
-				"text": "ต้องการลา?",
+				"text": "คุณต้องการลา?",
 				"actions": [
 					{
 						"type": "message",
