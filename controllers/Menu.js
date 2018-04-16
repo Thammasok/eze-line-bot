@@ -54,6 +54,19 @@ exports.showMenu = function (sender, section) {
 				{
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"title": "Help",
+					"text": "Support you for enjoy with LLENN",
+					"actions": [
+						{
+							"type": "message",
+							"label": "Help",
+							"text": "help"
+						}
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
 					"title": "Settings",
 					"text": "Optimize your bot",
 					"actions": [

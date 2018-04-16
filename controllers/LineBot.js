@@ -41,7 +41,7 @@ exports.callLineBot = async function(req, res, next) {
 				await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
 				break;
 			default:
-				await sendMessage(sender, 'นี่กำลังถามไม่ตรงคำตอบนะ');
+				await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
 		}
 	} else {
 		await weakUpBot(sender);
