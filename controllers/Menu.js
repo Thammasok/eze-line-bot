@@ -8,7 +8,7 @@ exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "this is a carousel template",
+		"altText": "carousel main menu",
 		"template": {
 			"type": "carousel",
 			"columns": [
@@ -21,7 +21,14 @@ exports.showMenu = function (sender, section) {
 						"type": "uri",
 						"label": "View detail",
 						"uri": "http://example.com/page/123"
-					}
+					},
+					"actions": [
+						{
+							"type": "message",
+							"label": "จิ้มเบาๆ",
+							"text": "cc menu"
+						}
+					]
 				}
 			],
 			"imageAspectRatio": "rectangle",
