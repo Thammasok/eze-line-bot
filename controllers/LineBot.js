@@ -1,6 +1,7 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
+const { leave } = require('./Leave');
 
 const config = require('../config/config');
 
