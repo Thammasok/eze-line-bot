@@ -28,7 +28,7 @@ exports.callLineBot = async function(req, res, next) {
 			break;
 		case 'help':
 			// await helpSender(sender);
-			await sendMessage(sender, 'ตอนนี้ยังช่วยอะไรไม่ได้เลยจ้าาาาาาา');
+			await helpSender(sender);
 			break;
 		case 'help me':
 			await sendMessage(sender, 'ฉันจะช่วยคุฯให้เต็มที่');
