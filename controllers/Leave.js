@@ -26,7 +26,7 @@ exports.leave = function (sender, leaveType) {
 
     const message = {
       "type": "text",
-      "text": "ระบุวันที่ต้องการลา ตาม Format นี้\n20-02-2018 10:00:00 to 20-02-2018 12:00:00 \nหรือ\n20-02-2018 to 30-02-2018\n20-02-2018 (ลาเต็มวัน)"
+      "text": "พิมพ์วันที่ต้องการลา ตาม Format นี้\n from 20-02-2018 (ลาเต็มวัน)\nหรือ\nfrom 20-02-2018 to 30-02-2018\nfrom 20-02-2018 10:00:00 to 20-02-2018 12:00:00"
     };
 	
 		client.pushMessage(sender, message)
@@ -40,8 +40,8 @@ exports.leave = function (sender, leaveType) {
   });
 };
 
-exports.leaveDateSelect = function (sender, type) {
-  const leaveDateText = "";
+exports.updateLeaveDate = function (sender, text) {
+  const leaveDateText = text.substring(4).trim().split(" ");
 
   if(type === "from") {
     leaveDateText = "วันที่เริ่มลา";
@@ -51,7 +51,7 @@ exports.leaveDateSelect = function (sender, type) {
 
   const message = {
     type: 'text',
-    text: 'พิมพ์' + leaveDateText + ' '
+    text: leaveDateText[0]
   };
 
   client.pushMessage(sender, message)

@@ -1,7 +1,7 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
-const { leave } = require('./Leave');
+const { leave, updateLeaveDate } = require('./Leave');
 
 const config = require('../config/config');
 
@@ -29,47 +29,47 @@ exports.callLineBot = async function(req, res, next) {
 	const textLength = text.length;
 	
 	if(textLength > 1) {
-		switch (text.toLowerCase()) {
-			case 'llenn':
-				await weakUpBot(sender);
-				break;
-			
-			//Menu
-			case 'menu': 
-				await mainMenu(sender);
-				break;
-			case 'menu:company':
-				await companyMenu(sender);
-			case 'menu:leave':
-				await leaveMenu(sender);
-				break;
-
-			//Leave
-			case 'leave:sick':
-				await leave(sender, "sick");
-				break;
-			case 'leave:personal business':
-				await leave(sender, "personal business");
-				break;
-			case 'leave:annual':
-				await leave(sender, "annual");
-				break;
-			case 'leave:from':
-				await leaveDate(sender, "from");
-				break;
-			case 'leave:to':
-				await leaveDate(sender, "to");
-				break;
-
-			//Help
-			case 'help':
-				await help(sender);
-				break;
-			case 'help me':
-				await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
-				break;
-			default:
-				await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
+		let checkLeaveDate = text.substring(0, 4);
+		
+		if(checkLeaveDate === "from") {
+			await updateLeaveDate(sender, text);
+		} else {
+			switch (text.toLowerCase()) {
+				case 'llenn':
+					await weakUpBot(sender);
+					break;
+				
+				//Menu
+				case 'menu': 
+					await mainMenu(sender);
+					break;
+				case 'menu:company':
+					await companyMenu(sender);
+				case 'menu:leave':
+					await leaveMenu(sender);
+					break;
+	
+				//Leave
+				case 'leave:sick':
+					await leave(sender, "sick");
+					break;
+				case 'leave:personal business':
+					await leave(sender, "personal business");
+					break;
+				case 'leave:annual':
+					await leave(sender, "annual");
+					break;
+	
+				//Help
+				case 'help':
+					await help(sender);
+					break;
+				case 'help me':
+					await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
+					break;
+				default:
+					await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
+			}
 		}
 	} else {
 		await weakUpBot(sender);
