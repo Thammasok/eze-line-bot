@@ -8,24 +8,41 @@ exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "carousel menu",
+		"altText": "this is a carousel template",
 		"template": {
 			"type": "carousel",
-			"imageAspectRatio": "rectangle",
-      "imageSize": "cover",
 			"columns": [
 				{
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": "ChomCHOB",
-					"text": "Support อะไรบ้าง ถ้าคิดออกจะบอกอีกที :P",
+					"title": "this is menu",
+					"text": "description",
 					"defaultAction": {
-						"type": "message",
-						"label": "ChomCHOB Menu",
-						"text": "ccmenu"
-					}
+						"type": "uri",
+						"label": "View detail",
+						"uri": "http://example.com/page/123"
+					},
+					"actions": [
+						{
+							"type": "postback",
+							"label": "Buy",
+							"data": "action=buy&itemid=111"
+						},
+						{
+							"type": "postback",
+							"label": "Add to cart",
+							"data": "action=add&itemid=111"
+						},
+						{
+							"type": "uri",
+							"label": "View detail",
+							"uri": "http://example.com/page/111"
+						}
+					]
 				}
-			]
+			],
+			"imageAspectRatio": "rectangle",
+			"imageSize": "cover"
 		}
 	};
 
@@ -35,7 +52,7 @@ exports.showMenu = function (sender, section) {
 		})
 		.catch((err) => {
 			// error handling
-			console.log(err.details);
+			console.log(err);
 		});
 	});
 }
