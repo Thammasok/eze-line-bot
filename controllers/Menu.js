@@ -8,79 +8,79 @@ exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "this is a carousel template",
+		"altText": "carousel menu",
 		"template": {
-				"type": "carousel",
-				"columns": [
+			"type": "carousel",
+			"imageAspectRatio": "rectangle",
+      "imageSize": "cover",
+			"columns": [
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "ChomCHOB",
+					"text": "Support อะไรบ้าง ถ้าคิดออกจะบอกอีกที :P",
+					"defaultAction": {
+						"type": "message",
+						"label": "ChomCHOB Menu",
+						"text": "ccmenu"
+					},
+					"actions": [
 						{
-							"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
-							"imageBackgroundColor": "#FFFFFF",
-							"title": "ChomCHOB",
-							"text": "Support อะไรบ้าง ถ้าคิดออกจะบอกอีกที :P",
-							"defaultAction": {
-								"type": "message",
-								"label": "ChomCHOB Menu",
-								"text": "ccmenu"
-							},
-							"actions": [
-								{
-									"type": "message",
-									"label": "ชวนเพื่อนลงแรงค์",
-									"text": "ranggame"
-								},
-								{
-									"type": "message",
-									"label": "ลางาน ก็บอกด้วย",
-									"text": "la stop"
-								},
-								{
-									"type": "message",
-									"label": "ต้ังแต่มีแฟนเพื่อนเราก็เปลี่ยนไป",
-									"text": "father home association"
-								},
-								{
-									"type": "message",
-									"label": "วันไหนหยุดเตือนกูด้วย",
-									"text": "stop working"
-								}
-							]
+							"type": "message",
+							"label": "ชวนเพื่อนลงแรงค์",
+							"text": "ranggame"
 						},
 						{
-							"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
-							"imageBackgroundColor": "#000000",
-							"title": "Trello",
-							"text": "description",
-							"defaultAction": {
-								"type": "message",
-								"label": "Todo",
-								"text": "todo"
-							},
-							"actions": [
-								{
-									"type": "message",
-									"label": "Create Cards",
-									"text": "new task"
-								},
-								{
-									"type": "message",
-									"label": "Waiting",
-									"text": "wating task"
-								},
-								{
-									"type": "message",
-									"label": "Processing",
-									"text": "processing Task"
-								},
-								{
-									"type": "message",
-									"label": "Move",
-									"text": "move task"
-								}
-							]
+							"type": "message",
+							"label": "มาช้า หรือ ลางาน",
+							"text": "la stop"
+						},
+						{
+							"type": "message",
+							"label": "ต้ังแต่มีแฟนเพื่อนเราก็เปลี่ยนไป",
+							"text": "father home association"
+						},
+						{
+							"type": "message",
+							"label": "วันหยุดเตือนด้วย",
+							"text": "stop working"
 						}
-				],
-				"imageAspectRatio": "rectangle",
-				"imageSize": "cover"
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#000000",
+					"title": "Trello",
+					"text": "description",
+					"defaultAction": {
+						"type": "message",
+						"label": "Todo",
+						"text": "todo"
+					},
+					"actions": [
+						{
+							"type": "message",
+							"label": "Create Cards",
+							"text": "new task"
+						},
+						{
+							"type": "message",
+							"label": "Waiting",
+							"text": "wating task"
+						},
+						{
+							"type": "message",
+							"label": "Processing",
+							"text": "processing Task"
+						},
+						{
+							"type": "message",
+							"label": "Move",
+							"text": "move task"
+						}
+					]
+				}
+			]
 		}
 	};
 
