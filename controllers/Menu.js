@@ -9,7 +9,7 @@ exports.mainMenu = function (sender) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "carousel main menu",
+		"altText": "Main menu",
 		"template": {
 			"type": "carousel",
 			"columns": [
@@ -92,5 +92,40 @@ exports.mainMenu = function (sender) {
 			// error handling
 			console.log(err);
 		});
+	});
+}
+
+exports.menuTeam = function (sender, msg) {
+	return new Promise(() => {
+		const section = msg.split(":");
+		const message = {
+			"type": "template",
+			"altText": section[1] + " menu",
+			"template": {
+					"type": "buttons",
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageAspectRatio": "rectangle",
+					"imageSize": "cover",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Menu",
+					"text": "",
+					"actions": [
+						{
+							"type": "message",
+							"label": "ลางาน",
+							"text": section + " leave"
+						}
+					]
+			}
+		};
+	
+		client.pushMessage(sender, message)
+			.then(() => {
+				console.log('success');
+			})
+			.catch((err) => {
+				// error handling
+				console.log(err);
+			});
 	});
 }

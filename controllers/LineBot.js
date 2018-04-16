@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
-const { mainMenu } = require('./Menu');
+const { mainMenu, menuTeam } = require('./Menu');
 
 const config = require('../config/config');
 
@@ -35,8 +35,9 @@ exports.callLineBot = async function(req, res, next) {
 			case 'menu': 
 				await mainMenu(sender);
 				break;
+			case 'menu:chomchob':
+				await menuTeam(sender, text);
 			case 'help':
-				// await helpSender(sender);
 				await help(sender);
 				break;
 			case 'help me':
