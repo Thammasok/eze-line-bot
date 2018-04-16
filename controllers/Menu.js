@@ -35,11 +35,6 @@ exports.showMenu = function (sender, section) {
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Trello",
 					"text": "Managing your tasks",
-					"defaultAction": {
-						"type": "message",
-						"label": "เห็นงานเป็นลม",
-						"text": "trello menu"
-					},
 					"actions": [
 						{
 							"type": "message",
@@ -53,11 +48,6 @@ exports.showMenu = function (sender, section) {
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Calendar",
 					"text": "Plan your upcomming events",
-					"defaultAction": {
-						"type": "message",
-						"label": "นัดไว้ละ",
-						"text": "calendar menu"
-					},
 					"actions": [
 						{
 							"type": "message",
@@ -71,12 +61,13 @@ exports.showMenu = function (sender, section) {
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Setting",
 					"text": "Optimize your bot",
-					"defaultAction": {
-						"type": "message",
-						"label": "ตั้งค่า",
-						"text": "setting menu"
-					},
-					"actions": []
+					"actions": [
+						{
+							"type": "message",
+							"label": "ตั้งค่า",
+							"text": "setting menu"
+						}
+					]
 				}
 			],
 			"imageAspectRatio": "rectangle",
