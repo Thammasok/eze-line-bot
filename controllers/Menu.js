@@ -15,7 +15,7 @@ exports.showMenu = function (sender, section) {
       "imageSize": "cover",
 			"columns": [
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-square.png",
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "ChomCHOB",
 					"text": "Support อะไรบ้าง ถ้าคิดออกจะบอกอีกที :P",
@@ -23,62 +23,7 @@ exports.showMenu = function (sender, section) {
 						"type": "message",
 						"label": "ChomCHOB Menu",
 						"text": "ccmenu"
-					},
-					"actions": [
-						{
-							"type": "message",
-							"label": "ชวนเพื่อนลงแรงค์",
-							"text": "ranggame"
-						},
-						{
-							"type": "message",
-							"label": "มาช้า หรือ ลางาน",
-							"text": "la stop"
-						},
-						{
-							"type": "message",
-							"label": "ต้ังแต่มีแฟนเพื่อนเราก็เปลี่ยนไป",
-							"text": "father home association"
-						},
-						{
-							"type": "message",
-							"label": "วันหยุดเตือนด้วย",
-							"text": "stop working"
-						}
-					]
-				},
-				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
-					"imageBackgroundColor": "#000000",
-					"title": "Trello",
-					"text": "description",
-					"defaultAction": {
-						"type": "message",
-						"label": "Todo",
-						"text": "todo"
-					},
-					"actions": [
-						{
-							"type": "message",
-							"label": "Create Cards",
-							"text": "new task"
-						},
-						{
-							"type": "message",
-							"label": "Waiting",
-							"text": "wating task"
-						},
-						{
-							"type": "message",
-							"label": "Processing",
-							"text": "processing Task"
-						},
-						{
-							"type": "message",
-							"label": "Move",
-							"text": "move task"
-						}
-					]
+					}
 				}
 			]
 		}
@@ -90,7 +35,7 @@ exports.showMenu = function (sender, section) {
 		})
 		.catch((err) => {
 			// error handling
-			console.log(err);
+			console.log(err.details);
 		});
 	});
 }
