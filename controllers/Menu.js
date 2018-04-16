@@ -138,6 +138,9 @@ exports.leaveMenu = function (sender) {
 			"altText": "Leave menu",
 			"template": {
 					"type": "buttons",
+					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageAspectRatio": "rectangle",
+					"imageSize": "cover",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Leave menu",
 					"text": "ต้องการลา?",
