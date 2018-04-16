@@ -26,7 +26,7 @@ exports.leave = function (sender, leaveType) {
       "type": "template",
       "altText": "Leave date",
       "template": {
-        "type": "leave date",
+        "type": "confirm",
         "text": "ต้องการลาในวันที่",
         "actions": [
           {
