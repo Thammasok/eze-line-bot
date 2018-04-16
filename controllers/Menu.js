@@ -8,19 +8,19 @@ exports.showMenu = function (sender, section) {
 	return new Promise(() => {
 	const message = {
 		"type": "template",
-		"altText": "carousel main menu",
+		"altText": "this is a carousel template",
 		"template": {
 			"type": "carousel",
 			"columns": [
 				{
 					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
-					"title": "ChomCHOB",
-					"text": "วันหยุดบอกนัทด้วย วันนี้ใครลา นัดประชุม ชวนเพื่อนลงแรงค์",
+					"title": "this is menu",
+					"text": "description",
 					"defaultAction": {
-						"type": "message",
-						"label": "ChomCHOB Menu",
-						"text": "cc menu"
+						"type": "uri",
+						"label": "View detail",
+						"uri": "http://example.com/page/123"
 					}
 				}
 			],
