@@ -137,9 +137,6 @@ exports.leaveMenu = function (sender) {
 			"altText":"Leave menu",
 			"template": {
 				"type": "buttons",
-				"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
-				"imageAspectRatio": "rectangle",
-				"imageSize": "cover",
 				"imageBackgroundColor": "#FFFFFF",
 				"title": "Leave menu",
 				"text": "ต้องการลา?",
@@ -158,16 +155,6 @@ exports.leaveMenu = function (sender) {
 						"type": "message",
 						"label": "ลาพักร้อน",
 						"text": "leave:annual"
-					},
-					{
-						"type": "message",
-						"label": "ลาคลอด",
-						"text": "leave:maternity"
-					},
-					{
-						"type": "message",
-						"label": "ลาบวช",
-						"text": "leave:ordination"
 					}
 				]
 			}
@@ -179,7 +166,7 @@ exports.leaveMenu = function (sender) {
 			})
 			.catch((err) => {
 				// error handling
-				console.log(err.message);
+				console.log(err.details);
 			});
 	});
 }
