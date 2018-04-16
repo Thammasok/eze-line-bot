@@ -54,6 +54,12 @@ exports.callLineBot = async function(req, res, next) {
 			case 'leave:annual':
 				await leave(sender, "annual");
 				break;
+			case 'leave:from':
+				await leaveDate(sender, "from");
+				break;
+			case 'leave:to':
+				await leaveDate(sender, "to");
+				break;
 
 			//Help
 			case 'help':

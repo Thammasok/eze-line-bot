@@ -31,13 +31,8 @@ exports.leave = function (sender, leaveType) {
         "actions": [
           {
             "type": "message",
-            "label": "วันที่เริ่มลา",
+            "label": "ระบุวันลา",
             "text": "leave:from"
-          },
-          {
-            "type": "message",
-            "label": "ถึงวันที่",
-            "text": "leave:to"
           }
         ]
       }
@@ -53,3 +48,27 @@ exports.leave = function (sender, leaveType) {
 			});
   });
 };
+
+exports.leaveDateSelect = function (sender, type) {
+  const leaveDateText = "";
+
+  if(type === "from") {
+    leaveDateText = "วันที่เริ่มลา";
+  } else {
+    leaveDateText = "ถึงวันที่";
+  }
+
+  const message = {
+    type: 'text',
+    text: 'พิมพ์' + leaveDateText + ' ตาม Format นี้ "20-02-2018" หรือ 20-02-2018 10:00:00'
+  };
+
+  client.pushMessage(sender, message)
+    .then(() => {
+      console.log('success');
+    })
+    .catch((err) => {
+      // error handling
+      console.log(err);
+    });
+}
