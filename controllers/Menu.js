@@ -137,7 +137,6 @@ exports.leaveMenu = function (sender) {
 			"altText":"Leave menu",
 			"template": {
 				"type": "buttons",
-				"imageBackgroundColor": "#FFFFFF",
 				"title": "Leave menu",
 				"text": "ต้องการลา?",
 				"actions": [
@@ -166,7 +165,7 @@ exports.leaveMenu = function (sender) {
 			})
 			.catch((err) => {
 				// error handling
-				console.log(err.details);
+				console.log(err.message);
 			});
 	});
 }
