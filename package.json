@@ -1,12 +1,11 @@
 {
-  "name": "llenn-line-bot",
+  "name": "eze-line-bot",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^0.14.1",
     "@line/bot-sdk": "^6.0.2",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.3",

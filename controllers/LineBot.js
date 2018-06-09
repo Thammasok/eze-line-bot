@@ -3,6 +3,8 @@ const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
 
+import {version as VERSION} from "../package.json"
+
 require('./Variables');
 
 // const config = require('../config/config');
@@ -32,6 +34,9 @@ exports.callLineBot = async function(req, res, next) {
 	const textLength = text.length;
 	
 	switch (text.toLowerCase()) {
+		case ABOUT: 
+			await weakUpBot(sender);
+			break;
 		case EZE:
 			await weakUpBot(sender);
 			break;
@@ -73,9 +78,11 @@ exports.callLineBot = async function(req, res, next) {
 
 function weakUpBot(sender) {
 	return new Promise(() => {
+		text = 'EZE READY HELP U. (V.' + VARSION + ')';
+
 		const message = {
 			type: 'text',
-			text: 'EZE เป็นผู้ช่วยของคุณ'
+			text: text
 		};
 	
 		client.pushMessage(sender, message)
