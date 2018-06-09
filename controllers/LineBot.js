@@ -3,8 +3,6 @@ const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
 
-import {version as VERSION} from "../package.json"
-
 require('./Variables');
 
 // const config = require('../config/config');
@@ -78,7 +76,7 @@ exports.callLineBot = async function(req, res, next) {
 
 function weakUpBot(sender) {
 	return new Promise(() => {
-		text = 'EZE READY HELP U. (V.' + VARSION + ')';
+		text = 'EZE READY HELP U. (V.' + VERSION + ')';
 
 		const message = {
 			type: 'text',

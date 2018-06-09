@@ -1,3 +1,4 @@
+export const VERSION      = '1.0.2'
 export const ABOUT        = 'about'
 export const EZE          = 'eze'
 export const MENU         = 'menu'
