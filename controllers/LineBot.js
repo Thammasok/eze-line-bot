@@ -3,8 +3,6 @@ const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
 
-require('./Variables');
-
 // const config = require('../config/config');
 
 const client = new line.Client({
@@ -31,12 +29,25 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(req.body.events[0])
 	const textLength = text.length;
 	
+	const ABOUT_VERSION = '1.0.4'
+	const EZE          = 'eze'
+	const MENU         = 'menu'
+	const MENU_COMPANY = 'menu:company'
+	const MENU_LEAVE   = 'menu:leave'
+
+	const LEAVE_SICK              = 'leave:sick'
+	const LEAVE_PERSONAL_BUSINESS = 'leave:pb'
+	const LEAVE_ANNUAL            = 'leave:annual'
+
+	const HELP    = 'help'
+	const HELP_ME = 'help me'
+
 	switch (text.toLowerCase()) {
 		case ABOUT: 
-			await weakUpBot(sender);
+			await weakUpBot(sender, ABOUT_VERSION);
 			break;
 		case EZE:
-			await weakUpBot(sender);
+			await weakUpBot(sender, ABOUT_VERSION);
 			break;
 		
 		//Menu
@@ -74,9 +85,9 @@ exports.callLineBot = async function(req, res, next) {
 	res.sendStatus(200);
 }
 
-function weakUpBot(sender) {
+function weakUpBot(sender, aboutVersion) {
 	return new Promise(() => {
-		text = 'EZE READY HELP U. (V.' + ABOUT_VERSION + ')';
+		text = 'EZE READY HELP U. (V.' + aboutVersion + ')';
 
 		const message = {
 			type: 'text',
