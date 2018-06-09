@@ -47,21 +47,21 @@ exports.callLineBot = async function(req, res, next) {
 			break;
 
 		//Leave
-		case 'leave:sick':
+		case LEAVE_SICK:
 			await leave(sender, "sick");
 			break;
-		case 'leave:personal business':
+		case LEAVE_PERSONAL_BUSINESS:
 			await leave(sender, "personal business");
 			break;
-		case 'leave:annual':
+		case LEAVE_ANNUAL:
 			await leave(sender, "annual");
 			break;
 
 		//Help
-		case 'help':
+		case HELP:
 			await help(sender);
 			break;
-		case 'help me':
+		case HELP_ME:
 			await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
 			break;
 		default:

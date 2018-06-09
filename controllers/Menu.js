@@ -15,7 +15,7 @@ exports.mainMenu = function (sender) {
 			"type": "carousel",
 			"columns": [
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "ChomCHOB",
 					"text": "นัดประชุม, ลางาน, เตือนวันหยุด, ชวนเพื่อนไต่แรงค์",
@@ -28,7 +28,7 @@ exports.mainMenu = function (sender) {
 					]
 				},
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Trello",
 					"text": "Managing your tasks",
@@ -41,7 +41,7 @@ exports.mainMenu = function (sender) {
 					]
 				},
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Calendar",
 					"text": "Plan your upcomming events",
@@ -54,7 +54,7 @@ exports.mainMenu = function (sender) {
 					]
 				},
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Help",
 					"text": "Support you for enjoy with LLENN",
@@ -67,7 +67,7 @@ exports.mainMenu = function (sender) {
 					]
 				},
 				{
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
 					"title": "Settings",
 					"text": "Optimize your bot",
@@ -104,7 +104,7 @@ exports.companyMenu = function (sender) {
 			"altText": team + " menu",
 			"template": {
 					"type": "buttons",
-					"thumbnailImageUrl": "https://llenn-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageAspectRatio": "rectangle",
 					"imageSize": "cover",
 					"imageBackgroundColor": "#FFFFFF",
