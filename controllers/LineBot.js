@@ -35,7 +35,7 @@ exports.callLineBot = async function(req, res, next) {
 			await updateLeaveDate(sender, text);
 		} else {
 			switch (text.toLowerCase()) {
-				case 'llenn':
+				case 'eze':
 					await weakUpBot(sender);
 					break;
 				
