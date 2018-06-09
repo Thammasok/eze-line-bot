@@ -6,24 +6,24 @@
     "CHANNEL_ACCESS_TOKEN": "5YyI0WllyPvKou0xttX8W0qacW3C0i96J/+97kxA6Xhxjpu7i/QDeanvfUYZfujOtsbGwuJWSf5TIe4YXnAKJTSRkzxmj9RWAxMLhF9TT89Qg0nPgqFu9eIPEZ33F5iU0+Cu2gWWO4j7ZzzwnAzfvAdB04t89/1O/w1cDnyilFU="
   },
   "development": {
-    "username": "lenusr",
-    "password": "00Cl8u3CzbRxuApX",
-    "database": "linebot_dev",
-    "host": "206.189.92.189:3306",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   },
   "test": {
-    "username": "lenusr",
-    "password": "00Cl8u3CzbRxuApX",
-    "database": "linebot_dev",
-    "host": "206.189.92.189:3306",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   },
   "production": {
-    "username": "lenusr",
-    "password": "00Cl8u3CzbRxuApX",
-    "database": "linebot_prod",
-    "host": "206.189.92.189:3306",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   }
 }

@@ -82,7 +82,7 @@ function weakUpBot(sender) {
 	return new Promise(() => {
 		const message = {
 			type: 'text',
-			text: 'สวัสดีค่ะ หนูเป็นผู้ช่วยของคุณ'
+			text: 'EZE เป็นผู้ช่วยของคุณ'
 		};
 	
 		client.pushMessage(sender, message)
