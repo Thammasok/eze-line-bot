@@ -1,9 +1,11 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
 const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
-const { leave, updateLeaveDate } = require('./Leave');
+const { leave } = require('./Leave');
 
-const config = require('../config/config');
+require('./Variables');
+
+// const config = require('../config/config');
 
 const client = new line.Client({
 	// channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
@@ -29,51 +31,41 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(req.body.events[0])
 	const textLength = text.length;
 	
-	if(textLength > 1) {
-		let checkLeaveDate = text.substring(0, 4);
+	switch (text.toLowerCase()) {
+		case EZE:
+			await weakUpBot(sender);
+			break;
 		
-		if(checkLeaveDate === "from") {
-			await updateLeaveDate(sender, text);
-		} else {
-			switch (text.toLowerCase()) {
-				case 'eze':
-					await weakUpBot(sender);
-					break;
-				
-				//Menu
-				case 'menu': 
-					await mainMenu(sender);
-					break;
-				case 'menu:company':
-					await companyMenu(sender);
-				case 'menu:leave':
-					await leaveMenu(sender);
-					break;
-	
-				//Leave
-				case 'leave:sick':
-					await leave(sender, "sick");
-					break;
-				case 'leave:personal business':
-					await leave(sender, "personal business");
-					break;
-				case 'leave:annual':
-					await leave(sender, "annual");
-					break;
-	
-				//Help
-				case 'help':
-					await help(sender);
-					break;
-				case 'help me':
-					await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
-					break;
-				default:
-					await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
-			}
-		}
-	} else {
-		await weakUpBot(sender);
+		//Menu
+		case MENU: 
+			await mainMenu(sender);
+			break;
+		case MENU_COMPANY:
+			await companyMenu(sender);
+		case MENU_LEAVE:
+			await leaveMenu(sender);
+			break;
+
+		//Leave
+		case 'leave:sick':
+			await leave(sender, "sick");
+			break;
+		case 'leave:personal business':
+			await leave(sender, "personal business");
+			break;
+		case 'leave:annual':
+			await leave(sender, "annual");
+			break;
+
+		//Help
+		case 'help':
+			await help(sender);
+			break;
+		case 'help me':
+			await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
+			break;
+		default:
+			await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
 	}
 
 	res.sendStatus(200);

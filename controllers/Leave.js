@@ -1,6 +1,6 @@
 const line = require('@line/bot-sdk');
 const moment = require('moment');
-const config = require('../config/config');
+// const config = require('../config/config');
 
 const client = new line.Client({
   // channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
