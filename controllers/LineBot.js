@@ -29,7 +29,7 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(req.body.events[0])
 	const textLength = text.length;
 	
-	const ABOUT_VERSION = '1.0.4'
+	const ABOUT_VERSION = '1.0.5'
 	const EZE          = 'eze'
 	const MENU         = 'menu'
 	const MENU_COMPANY = 'menu:company'
@@ -43,9 +43,6 @@ exports.callLineBot = async function(req, res, next) {
 	const HELP_ME = 'help me'
 
 	switch (text.toLowerCase()) {
-		case ABOUT: 
-			await weakUpBot(sender, ABOUT_VERSION);
-			break;
 		case EZE:
 			await weakUpBot(sender, ABOUT_VERSION);
 			break;
