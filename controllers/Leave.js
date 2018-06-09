@@ -3,7 +3,8 @@ const moment = require('moment');
 const config = require('../config/config');
 
 const client = new line.Client({
-	channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
+  // channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
+  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 });
 
 exports.leave = function (sender, leaveType) {

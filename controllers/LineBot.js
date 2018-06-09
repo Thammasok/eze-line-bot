@@ -6,7 +6,8 @@ const { leave, updateLeaveDate } = require('./Leave');
 const config = require('../config/config');
 
 const client = new line.Client({
-	channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
+	// channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
+	channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 });
 
 exports.callLineBot = async function(req, res, next) {
