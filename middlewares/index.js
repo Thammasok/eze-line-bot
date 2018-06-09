@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 
-const config = require('../config/config');
+// const config = require('../config/config');
 
 exports.normalMiddleware = function (req, res, next) {
   if (req.headers['content-type'] === "application/json") {
-    if(req.headers['authorization'] === config.TOKEN_AUTHONRIZATION) {
+    if(req.headers['authorization'] === process.env.TOKEN_AUTHONRIZATION) {
       next();
     } else {
       return res.status(401).json({
@@ -20,8 +20,8 @@ exports.normalMiddleware = function (req, res, next) {
 
 exports.authMiddleware = function (req, res, next) {
   if (req.headers['content-type'] === "application/json") {
-    if(req.headers['authorization'] === config.TOKEN_AUTHONRIZATION) {
-      jwt.verify(req.headers['login-token'], config.TOKEN_SECRET, function(err, decoded) {
+    if(req.headers['authorization'] === process.env.TOKEN_AUTHONRIZATION) { //config.TOKEN_AUTHONRIZATION
+      jwt.verify(req.headers['login-token'], process.env.TOKEN_SECRET, function(err, decoded) {
         if(decoded) {
           next();
         } else {
