@@ -1,5 +1,4 @@
-export const VERSION      = '1.0.2'
-export const ABOUT        = 'about'
+export const ABOUT_VERSION= '1.0.3'
 export const EZE          = 'eze'
 export const MENU         = 'menu'
 export const MENU_COMPANY = 'menu:company'

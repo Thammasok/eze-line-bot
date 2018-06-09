@@ -76,7 +76,7 @@ exports.callLineBot = async function(req, res, next) {
 
 function weakUpBot(sender) {
 	return new Promise(() => {
-		text = 'EZE READY HELP U. (V.' + VERSION + ')';
+		text = 'EZE READY HELP U. (V.' + ABOUT_VERSION + ')';
 
 		const message = {
 			type: 'text',
