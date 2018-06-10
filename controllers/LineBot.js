@@ -1,7 +1,8 @@
 const line = require('@line/bot-sdk');
 const { help } = require('./Help');
-const { mainMenu, companyMenu, leaveMenu } = require('./Menu');
+const { mainMenu, todoMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
+const { todoLists } = require('./Todo');
 
 // const config = require('../config/config');
 
@@ -30,14 +31,19 @@ exports.callLineBot = async function(req, res, next) {
 	const textLength = text.length;
 	
 	const ABOUT_VERSION = '1.0.5'
-	const EZE          = 'eze'
-	const MENU         = 'menu'
-	const MENU_COMPANY = 'menu:company'
-	const MENU_LEAVE   = 'menu:leave'
+	const EZE           = 'eze'
+	const MENU          = 'menu'
+	const MENU_COMPANY  = 'menu:company'
+	const MENU_LEAVE    = 'menu:leave'
+	const MENU_TODO 	  = 'menu:todo'
 
 	const LEAVE_SICK              = 'leave:sick'
 	const LEAVE_PERSONAL_BUSINESS = 'leave:pb'
 	const LEAVE_ANNUAL            = 'leave:annual'
+
+	const TODO_TODAY 	= 'todo:today'
+	const TODO_LISTS  = 'todo:lists'
+	const TODO_CREATE = 'todo:create'
 
 	const HELP    = 'help'
 	const HELP_ME = 'help me'
@@ -51,8 +57,12 @@ exports.callLineBot = async function(req, res, next) {
 		case MENU: 
 			await mainMenu(sender);
 			break;
+		case MENU_TODO: 
+			await todoMenu(sender);
+			break;
 		case MENU_COMPANY:
 			await companyMenu(sender);
+			break;
 		case MENU_LEAVE:
 			await leaveMenu(sender);
 			break;
@@ -66,6 +76,16 @@ exports.callLineBot = async function(req, res, next) {
 			break;
 		case LEAVE_ANNUAL:
 			await leave(sender, "annual");
+			break;
+
+		case TODO_LISTS:
+			await todoLists(sender);
+			break;
+		case TODO_TODAY:
+			await todoLists(sender);
+			break;
+		case TODO_CREATE:
+			await todoLists(sender);
 			break;
 
 		//Help

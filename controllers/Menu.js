@@ -17,6 +17,19 @@ exports.mainMenu = function (sender) {
 				{
 					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"title": "Todo",
+					"text": "บันทึกสิ่งที่ต้องทำ",
+					"actions": [
+						{
+							"type": "message",
+							"label": "Todo",
+							"text": "menu:todo"
+						}
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
 					"title": "ChomCHOB",
 					"text": "นัดประชุม, ลางาน, เตือนวันหยุด, ชวนเพื่อนไต่แรงค์",
 					"actions": [
@@ -93,6 +106,50 @@ exports.mainMenu = function (sender) {
 			// error handling
 			console.log(err);
 		});
+	});
+}
+
+exports.companyMenu = function (sender) {
+	return new Promise(() => {
+		const message = {
+			"type": "template",
+			"altText": "Todo Menu",
+			"template": {
+					"type": "buttons",
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageAspectRatio": "rectangle",
+					"imageSize": "cover",
+					"imageBackgroundColor": "#FFFFFF",
+					"title": "Todo Menu",
+					"text": "Please select",
+					"actions": [
+						{
+							"type": "message",
+							"label": "Today",
+							"text": "todo:today"
+						},
+						{
+							"type": "message",
+							"label": "Create",
+							"text": "todo:create"
+						},
+						{
+							"type": "message",
+							"label": "Lists",
+							"text": "todo:lists"
+						}
+					]
+			}
+		};
+	
+		client.pushMessage(sender, message)
+			.then(() => {
+				console.log('success');
+			})
+			.catch((err) => {
+				// error handling
+				console.log(err);
+			});
 	});
 }
 
