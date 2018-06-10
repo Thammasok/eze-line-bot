@@ -30,7 +30,7 @@ exports.callLineBot = async function(req, res, next) {
 	// console.log(req.body.events[0])
 	const textLength = text.length;
 	
-	const ABOUT_VERSION = '1.0.5'
+	const ABOUT_VERSION = '1.0.6'
 	const EZE           = 'eze'
 	const MENU          = 'menu'
 	const MENU_COMPANY  = 'menu:company'
