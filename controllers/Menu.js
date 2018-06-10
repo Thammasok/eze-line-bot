@@ -1,8 +1,6 @@
 const line = require('@line/bot-sdk');
-// const config = require('../config/config');
 
 const client = new line.Client({
-	// channelAccessToken: config.line.CHANNEL_ACCESS_TOKEN
 	channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
 });
 
@@ -109,7 +107,7 @@ exports.mainMenu = function (sender) {
 	});
 }
 
-exports.companyMenu = function (sender) {
+exports.todoMenu = function (sender) {
 	return new Promise(() => {
 		const message = {
 			"type": "template",
