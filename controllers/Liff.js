@@ -1,6 +1,6 @@
-import axios from 'axios';
+const axios = require('axios')
 
-export function openLiff(sender) {
+exports.openLiff = function(sender) {
   axios({
     method: 'post',
     url: 'https://api.line.me/liff/v1/apps',
