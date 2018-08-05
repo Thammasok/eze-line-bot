@@ -2,7 +2,7 @@ const line = require('@line/bot-sdk');
 const { help } = require('./Help');
 const { mainMenu, todoMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
-const { todoLists } = require('./Todo');
+// const { todoLists } = require('./Todo');
 const { openLiff } = require('./Liff')
 
 // const config = require('../config/config');
@@ -43,9 +43,9 @@ exports.callLineBot = async function(req, res, next) {
 	const LEAVE_PERSONAL_BUSINESS = 'leave:pb'
 	const LEAVE_ANNUAL            = 'leave:annual'
 
-	const TODO_TODAY 	= 'todo:today'
-	const TODO_LISTS  = 'todo:lists'
-	const TODO_CREATE = 'todo:create'
+	// const TODO_TODAY 	= 'todo:today'
+	// const TODO_LISTS  = 'todo:lists'
+	// const TODO_CREATE = 'todo:create'
 
 	const HELP    = 'help'
 	const HELP_ME = 'help me'
@@ -83,15 +83,15 @@ exports.callLineBot = async function(req, res, next) {
 			await leave(sender, "annual");
 			break;
 
-		case TODO_LISTS:
-			await todoLists(sender);
-			break;
-		case TODO_TODAY:
-			await todoLists(sender);
-			break;
-		case TODO_CREATE:
-			await todoLists(sender);
-			break;
+		// case TODO_LISTS:
+		// 	await todoLists(sender);
+		// 	break;
+		// case TODO_TODAY:
+		// 	await todoLists(sender);
+		// 	break;
+		// case TODO_CREATE:
+		// 	await todoLists(sender);
+		// 	break;
 
 		//Help
 		case HELP:
