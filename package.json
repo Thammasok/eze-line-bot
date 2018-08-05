@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@line/bot-sdk": "^6.0.2",
+    "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
@@ -26,8 +27,7 @@
     "mysql2": "^1.5.3",
     "pug": "^2.0.0-beta11",
     "sequelize": "^4.37.10",
-    "serve-favicon": "~2.4.5",
-    "whatwg-fetch": "^2.0.4"
+    "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
     "chai": "^4.1.2",
