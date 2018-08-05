@@ -15,8 +15,8 @@ exports.openLiff = function(sender) {
     },
     data: {
       "view": {
-        "type":"tall",
-        "url":"https://eze-ex-leff.herokuapp.com"
+        "type": "tall",
+        "url": process.env.LIFF_WEB_URL
       }
     }
   }).then(function (response) {
