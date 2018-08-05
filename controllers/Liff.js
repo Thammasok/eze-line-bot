@@ -15,22 +15,21 @@ exports.openLiff = function(sender) {
       }
     }
   }).then(function (response) {
-    console.log(response)
-    // if(response.status === 200) {
-    //   const message = {
-    //     "type": "text",
-    //     "text": "line://app/" + response.liffId
-    //   };
+    if(response.status === 200) {
+      const message = {
+        "type": "text",
+        "text": "line://app/" + response.data.liffId
+      };
     
-    //   client.pushMessage(sender, message)
-    //     .then(() => {
-    //       console.log('success');
-    //     })
-    //     .catch((err) => {
-    //       // error handling
-    //       console.log(err);
-    //     });
-    // }
+      client.pushMessage(sender, message)
+        .then(() => {
+          console.log('success');
+        })
+        .catch((err) => {
+          // error handling
+          console.log(err);
+        });
+    }
   })
   .catch(function (error) {
     console.log(error);
