@@ -3,6 +3,7 @@ const { help } = require('./Help');
 const { mainMenu, todoMenu, companyMenu, leaveMenu } = require('./Menu');
 const { leave } = require('./Leave');
 const { todoLists } = require('./Todo');
+const { openLiff } = require('./Liff')
 
 // const config = require('../config/config');
 
@@ -36,6 +37,7 @@ exports.callLineBot = async function(req, res, next) {
 	const MENU_COMPANY  = 'menu:company'
 	const MENU_LEAVE    = 'menu:leave'
 	const MENU_TODO 	  = 'menu:todo'
+	const MENU_LIFF 	  = 'menu:liff'
 
 	const LEAVE_SICK              = 'leave:sick'
 	const LEAVE_PERSONAL_BUSINESS = 'leave:pb'
@@ -65,6 +67,9 @@ exports.callLineBot = async function(req, res, next) {
 			break;
 		case MENU_LEAVE:
 			await leaveMenu(sender);
+			break;
+		case MENU_LIFF: 
+			await openLiff(sender);
 			break;
 
 		//Leave

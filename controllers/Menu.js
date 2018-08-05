@@ -15,6 +15,19 @@ exports.mainMenu = function (sender) {
 				{
 					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
 					"imageBackgroundColor": "#FFFFFF",
+					"title": "LIFF",
+					"text": "LIFF Function",
+					"actions": [
+						{
+							"type": "message",
+							"label": "liff",
+							"text": "menu:liff"
+						}
+					]
+				},
+				{
+					"thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
+					"imageBackgroundColor": "#FFFFFF",
 					"title": "Todo",
 					"text": "บันทึกสิ่งที่ต้องทำ",
 					"actions": [
