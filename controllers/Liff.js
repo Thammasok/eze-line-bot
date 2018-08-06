@@ -48,38 +48,38 @@ exports.openLiff = function(sender) {
         data: {
           "to": sender,
           "messages": [{
-           "type": "bubble",
-           "body": {
-             "type": "box",
-             "layout": "vertical",
-             "contents": [
-               {
-                 "type": "image",
-                 "url": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
-                 "size": "full"
-               }
-             ]
-           },
-           "footer": {
-             "type": "box",
-             "layout": "vertical",
-             "contents": [
-               {
-                 "type": "spacer",
-                 "size": "xl"
-               },
-               {
-                 "type": "button",
-                 "action": {
-                   "type": "uri",
-                   "label": "Open",
-                   "uri": liffUrl
-                 },
-                 "style": "primary",
-                 "color": "#5DADE2"
-               }
-             ]
-           }
+            "type": "carousel",
+            "contents": [
+              {
+                "type": "bubble",
+                "body": {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "Click Open button",
+                      "wrap": true
+                    }
+                  ]
+                },
+                "footer": {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "button",
+                      "style": "primary",
+                      "action": {
+                        "type": "uri",
+                        "label": "Open",
+                        "uri": liffUrl
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }]
         }
       }).then(function (response) {
