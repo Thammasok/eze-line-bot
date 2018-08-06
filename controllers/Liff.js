@@ -21,12 +21,13 @@ exports.openLiff = function(sender) {
     }
   }).then(function (response) {
     if(response.status === 200) {
+      const liffUrl = "line://app/"+ response.data.liffId
 
       // Show Type Text Massage
       const message = {
         "type": "text",
-        "text": "line://app/"+ response.data.liffId
-      };
+        "text": liffUrl
+      }
 
       client.pushMessage(sender, message)
       .then(() => {
@@ -35,10 +36,10 @@ exports.openLiff = function(sender) {
       .catch((err) => {
         // error handling
         console.log(err);
-      });
+      })
     }
   })
   .catch(function (error) {
-    console.log(error.);
+    console.log(error);
   })
 }
