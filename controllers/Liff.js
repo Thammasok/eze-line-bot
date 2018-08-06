@@ -21,7 +21,6 @@ exports.openLiff = function(sender) {
     }
   }).then(function (response) {
     if(response.status === 200) {
-      let liffUrl = "line://app/"+ response.data.liffId
 
       // Show Type Text Massage
       // const message = {
@@ -70,11 +69,11 @@ exports.openLiff = function(sender) {
                     {
                       "type": "button",
                       "style": "primary",
-                      "color": "#5DADE2"
+                      "color": "#5DADE2",
                       "action": {
                         "type": "uri",
                         "label": "Open",
-                        "uri": liffUrl
+                        "uri": "line://app/"+ response.data.liffId
                       }
                     }
                   ]
