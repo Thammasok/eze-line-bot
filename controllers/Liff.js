@@ -48,106 +48,38 @@ exports.openLiff = function(sender) {
         data: {
           "to": sender,
           "messages": [{
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "spacing": "md",
-              "action": {
-                "type": "uri",
-                "uri": liffUrl
-              },
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "LIFF APP",
-                  "size": "xl",
-                  "weight": "bold"
-                },
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "spacing": "sm",
-                  "contents": [
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "contents": [
-                        {
-                          "type": "icon",
-                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png"
-                        },
-                        {
-                          "type": "text",
-                          "text": "$10.5",
-                          "weight": "bold",
-                          "margin": "sm",
-                          "flex": 0
-                        },
-                        {
-                          "type": "text",
-                          "text": "400kcl",
-                          "size": "sm",
-                          "align": "end",
-                          "color": "#aaaaaa"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "contents": [
-                        {
-                          "type": "icon",
-                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_large_32.png"
-                        },
-                        {
-                          "type": "text",
-                          "text": "$15.5",
-                          "weight": "bold",
-                          "margin": "sm",
-                          "flex": 0
-                        },
-                        {
-                          "type": "text",
-                          "text": "550kcl",
-                          "size": "sm",
-                          "align": "end",
-                          "color": "#aaaaaa"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "text",
-                  "text": "Click Open button.",
-                  "wrap": true,
-                  "color": "#aaaaaa",
-                  "size": "xxs"
-                }
-              ]
-            },
-            "footer": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "spacer",
-                  "size": "xxl"
-                },
-                {
-                  "type": "button",
-                  "style": "primary",
-                  "color": "#5DADE2",
-                  "action": {
-                    "type": "uri",
-                    "label": "Open",
-                    "uri": liffUrl
-                  }
-                }
-              ]
-            }
+           "type": "bubble",
+           "body": {
+             "type": "box",
+             "layout": "vertical",
+             "contents": [
+               {
+                 "type": "image",
+                 "url": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
+                 "size": "full"
+               }
+             ]
+           },
+           "footer": {
+             "type": "box",
+             "layout": "vertical",
+             "contents": [
+               {
+                 "type": "spacer",
+                 "size": "xl"
+               },
+               {
+                 "type": "button",
+                 "action": {
+                   "type": "uri",
+                   "label": "Open",
+                   "uri": liffUrl
+                 },
+                 "style": "primary",
+                 "color": "#5DADE2"
+               }
+             ]
+           }
           }]
         }
       }).then(function (response) {
