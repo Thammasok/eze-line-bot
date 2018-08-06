@@ -46,7 +46,7 @@ exports.openLiff = function(sender) {
         },
         data: {
           "to": sender,
-          "messages": {
+          "messages": [{
             "type": "carousel",
             "contents": [
               {
@@ -80,7 +80,7 @@ exports.openLiff = function(sender) {
                 }
               }
             ]
-          }
+          }]
         }
       }).then(function (response) {
         console.log('success')
