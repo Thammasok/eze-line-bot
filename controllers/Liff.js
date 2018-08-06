@@ -28,36 +28,54 @@ exports.openLiff = function(sender) {
       //   "type": "text",
       //   "text": liffUrl
       // };
-      
-      const message = {
-        "type": "template",
-        "altText": "Todo Menu",
-        "template": {
-            "type": "buttons",
-            "thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
-            "imageAspectRatio": "rectangle",
-            "imageSize": "cover",
-            "imageBackgroundColor": "#FFFFFF",
-            "title": "LIFF",
-            "text": "Click Open button",
-            "actions": [
-              {
-                "type": "message",
-                "label": "Open LIFF",
-                "text": liffUrl
-              }
-            ]
-        }
-      };
 
-      client.pushMessage(sender, message)
-        .then(() => {
-          console.log('success');
-        })
-        .catch((err) => {
-          // error handling
-          console.log(err);
-        });
+      // client.pushMessage(sender, message)
+      //   .then(() => {
+      //     console.log('success');
+      //   })
+      //   .catch((err) => {
+      //     // error handling
+      //     console.log(err);
+      //   });
+
+      axios({
+        method: 'post',
+        url: 'https://api.line.me/v2/bot/message/push',
+        headers: {
+          "Authorization": "Bearer " + process.env.CHANNEL_ACCESS_TOKEN,
+          "Content-Type": "application/json"
+        },
+        data: {
+          "to": sender,
+          "messages": [
+            {
+              "type": "flex",
+              "altText": "This is a Flex Message",
+              "contents": {
+                "type": "bubble",
+                "body": {
+                  "type": "box",
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "Hello,"
+                    },
+                    {
+                      "type": "text",
+                      "text": "World!"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }).then(function (response) {
+        console.log('success')
+      }).catch(function (error) {
+        console.log(error);
+      })
     }
   })
   .catch(function (error) {
