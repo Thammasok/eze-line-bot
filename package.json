@@ -6,7 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@line/bot-sdk": "^6.0.2",
+    "@line/bot-sdk": "^6.1.0",
     "axios": "^0.18.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.3",
