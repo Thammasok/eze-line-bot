@@ -120,6 +120,6 @@ exports.openLiff = function(sender) {
     }
   })
   .catch(function (error) {
-    console.log(error);
+    console.log(error.details);
   })
 }
