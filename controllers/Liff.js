@@ -53,34 +53,64 @@ exports.openLiff = function(sender) {
                 "type": "bubble",
                 "body": {
                   "type": "box",
-                  "layout": "horizontal",
+                  "layout": "vertical",
                   "contents": [
                     {
                       "type": "text",
-                      "text": "Click Open button",
-                      "wrap": true
+                      "text": "First bubble"
                     }
                   ]
-                },
-                "footer": {
+                }
+              },
+              {
+                "type": "bubble",
+                "body": {
                   "type": "box",
-                  "layout": "horizontal",
+                  "layout": "vertical",
                   "contents": [
                     {
-                      "type": "button",
-                      "style": "primary",
-                      "color": "#5DADE2",
-                      "action": {
-                        "type": "uri",
-                        "label": "Open",
-                        "uri": "line://app/"+ response.data.liffId
-                      }
+                      "type": "text",
+                      "text": "Second bubble"
                     }
                   ]
                 }
               }
             ]
           }]
+          // "messages": [{
+          //   "type": "carousel",
+          //   "contents": [
+          //     {
+          //       "type": "bubble",
+          //       "body": {
+          //         "type": "box",
+          //         "layout": "horizontal",
+          //         "contents": [
+          //           {
+          //             "type": "text",
+          //             "text": "Click Open button"
+          //           }
+          //         ]
+          //       },
+          //       "footer": {
+          //         "type": "box",
+          //         "layout": "horizontal",
+          //         "contents": [
+          //           {
+          //             "type": "button",
+          //             "style": "primary",
+          //             "color": "#5DADE2",
+          //             "action": {
+          //               "type": "uri",
+          //               "label": "Open",
+          //               "uri": "line://app/"+ response.data.liffId
+          //             }
+          //           }
+          //         ]
+          //       }
+          //     }
+          //   ]
+          // }]
         }
       }).then(function (response) {
         console.log('success')
