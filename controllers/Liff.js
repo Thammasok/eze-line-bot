@@ -38,6 +38,54 @@ exports.openLiff = function(sender) {
       //     console.log(err);
       //   });
 
+      const massage = [{
+        "type": "bubble",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "spacing": "md",
+          "action": {
+            "type": "uri",
+            "uri": liffUrl
+          },
+          "contents": [
+            {
+              "type": "text",
+              "text": "LIFF APP",
+              "size": "xl",
+              "weight": "bold"
+            },
+            {
+              "type": "text",
+              "text": "Click Open button",
+              "wrap": true,
+              "color": "#aaaaaa",
+              "size": "xxs"
+            }
+          ]
+        },
+        "footer": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "spacer",
+              "size": "xxl"
+            },
+            {
+              "type": "button",
+              "style": "primary",
+              "color": "#5DADE2",
+              "action": {
+                "type": "uri",
+                "label": "Open",
+                "uri": liffUrl
+              }
+            }
+          ]
+        }
+      }]
+
       axios({
         method: 'post',
         url: 'https://api.line.me/v2/bot/message/push',
@@ -47,29 +95,7 @@ exports.openLiff = function(sender) {
         },
         data: {
           "to": sender,
-          "messages": [
-            {
-              "type": "flex",
-              "altText": "This is a Flex Message",
-              "contents": {
-                "type": "bubble",
-                "body": {
-                  "type": "box",
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "text": "Hello,"
-                    },
-                    {
-                      "type": "text",
-                      "text": "World!"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
+          "messages": massage
         }
       }).then(function (response) {
         console.log('success')
