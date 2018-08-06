@@ -31,52 +31,56 @@ exports.openLiff = function(sender) {
       
       // Show Type Menu
       const message = {
-        "type": "bubble",
-        "body": {
-          "type": "box",
-          "layout": "vertical",
-          "spacing": "md",
-          "action": {
-            "type": "uri",
-            "uri": liffUrl
-          },
-          "contents": [
-            {
-              "type": "text",
-              "text": "LIFF",
-              "size": "xl",
-              "weight": "bold"
-            },
-            {
-              "type": "text",
-              "text": "LIFF App by EZE",
-              "wrap": true,
-              "color": "#aaaaaa",
-              "size": "xxs"
-            }
-          ]
-        },
-        "footer": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "spacer",
-              "size": "xxl"
-            },
-            {
-              "type": "button",
-              "style": "primary",
-              "color": "#905c44",
+        "type": "template",
+        "altText": "LIFF",
+        "template": {
+            "type": "bubble",
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "md",
               "action": {
                 "type": "uri",
-                "label": "Open",
                 "uri": liffUrl
-              }
+              },
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "LIFF",
+                  "size": "xl",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "text": "LIFF App by EZE",
+                  "wrap": true,
+                  "color": "#aaaaaa",
+                  "size": "xxs"
+                }
+              ]
+            },
+            "footer": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "spacer",
+                  "size": "xxl"
+                },
+                {
+                  "type": "button",
+                  "style": "primary",
+                  "color": "#905c44",
+                  "action": {
+                    "type": "uri",
+                    "label": "Open",
+                    "uri": liffUrl
+                  }
+                }
+              ]
             }
-          ]
+          }
         }
-      }
     
       client.pushMessage(sender, message)
         .then(() => {
