@@ -47,7 +47,7 @@ exports.openLiff = function(sender) {
         },
         data: {
           "to": sender,
-          "messages": [{
+          "messages": {
             "type": "carousel",
             "contents": [
               {
@@ -70,6 +70,7 @@ exports.openLiff = function(sender) {
                     {
                       "type": "button",
                       "style": "primary",
+                      "color": "#5DADE2"
                       "action": {
                         "type": "uri",
                         "label": "Open",
@@ -80,7 +81,7 @@ exports.openLiff = function(sender) {
                 }
               }
             ]
-          }]
+          }
         }
       }).then(function (response) {
         console.log('success')
