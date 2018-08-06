@@ -30,69 +30,26 @@ exports.openLiff = function(sender) {
       // };
       
       const message = {
-        "type": "carousel",
-        "contents": [
-          {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  "wrap": true
-                }
-              ]
-            },
-            "footer": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "button",
-                  "style": "primary",
-                  "action": {
-                    "type": "uri",
-                    "label": "Go",
-                    "uri": "https://example.com"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "Hello, World!",
-                  "wrap": true
-                }
-              ]
-            },
-            "footer": {
-              "type": "box",
-              "layout": "horizontal",
-              "contents": [
-                {
-                  "type": "button",
-                  "style": "primary",
-                  "action": {
-                    "type": "uri",
-                    "label": "Go",
-                    "uri": "https://example.com"
-                  }
-                }
-              ]
-            }
-          }
-        ]
+        "type": "template",
+        "altText": "Todo Menu",
+        "template": {
+            "type": "buttons",
+            "thumbnailImageUrl": "https://eze-line-bot.herokuapp.com/images/bear-rectangle.png",
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover",
+            "imageBackgroundColor": "#FFFFFF",
+            "title": "LIFF",
+            "text": "Click Open button",
+            "actions": [
+              {
+                "type": "message",
+                "label": "Open LIFF",
+                "text": liffUrl
+              }
+            ]
+        }
       };
-    
+
       client.pushMessage(sender, message)
         .then(() => {
           console.log('success');
