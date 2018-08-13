@@ -6,6 +6,25 @@ const client = new line.Client({
 });
 
 exports.openLiff = function(sender) {
+  const liffUrl = "line://app/"+ process.env.LIFF_ID
+
+  // Show Type Text Massage
+  const message = {
+    "type": "text",
+    "text": liffUrl
+  }
+
+  client.pushMessage(sender, message)
+  .then(() => {
+    console.log('success');
+  })
+  .catch((err) => {
+    // error handling
+    console.log(err);
+  })
+}
+
+exports.addLiff = function(sender) {
   axios({
     method: 'post',
     url: 'https://api.line.me/liff/v1/apps',
