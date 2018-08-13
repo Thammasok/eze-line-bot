@@ -105,7 +105,7 @@ exports.callLineBot = async function(req, res, next) {
 			await sendMessage(sender, 'ฉันจะช่วยคุณให้เต็มที่');
 			break;
 		default:
-			await sendMessage(sender, 'ถามแบบนี้ไม่มีคำตอบให้นะ');
+			return false
 	}
 
 	res.sendStatus(200);
